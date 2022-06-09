@@ -25,6 +25,7 @@ namespace macWebViewTestCocoa
         private void InitWebView()
         {
             var webConfiguration = new WKWebViewConfiguration();
+            webConfiguration.Preferences.SetValueForKey(NSObject.FromObject(true), new NSString("developerExtrasEnabled"));
             _webView = new WKWebView(frame: new CGRect(0,0,640,480), configuration: webConfiguration);
             _webView.UIDelegate = this;
             this.View.AddSubview(_webView);
